@@ -1,5 +1,6 @@
 #ifndef BSTNode_H
 #define BSTNode_H
+
 template <typename T>
 class Tree;
 
