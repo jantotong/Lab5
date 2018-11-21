@@ -2,9 +2,6 @@
 #define BSTNode_H
 
 template <typename T>
-class Tree;
-
-template <typename T>
 class TreeNode
 {
 	friend class Tree<T>;
