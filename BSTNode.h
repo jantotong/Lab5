@@ -2,32 +2,39 @@
 #define BSTNode_H
 
 template <typename T>
-class TreeNode
+class BSTNode
 {
-	friend class Tree<T>;
+	friend class BST<T>;
 
 public:
-	TreeNode(T);
-	T getData(); //returns data stored in node
+	BSTNode(T, T);
+	T getName();
+	T getBday(); //returns data stored in node
 
 private:
-	T data;
-	TreeNode* leftPtr; //pointer to left child node of node
-	TreeNode* rightPtr; //pointer to right child node of node
+	T bday, name;
+	BSTNode* leftPtr; //pointer to left child node of node
+	BSTNode* rightPtr; //pointer to right child node of node
 };
 
 template <typename T>
-TreeNode<T>::TreeNode(T dataIn)
+BSTNode<T>::BSTNode(T getName, T getBday)
 {
-	data = dataIn;
+	bday = bdayIn;
+	name = nameIn;
 	leftPtr = 0; //pointer to left and right child nodes are initilized to NULL
 	rightPtr = 0;
 }
 
 template <typename T>
-T TreeNode<T>::getData()
+T BSTNode<T>::getName()
 {
-	return data;
+	return name;
 }
 
+template <typename T>
+T BSTNode<T>::getBday()
+{
+	return bday;
+}
 #endif
