@@ -1,6 +1,6 @@
-#pragma once
 #ifndef NODE_H
 #define NODE_H
+using namespace std;
 
 template <class T>
 class Node
@@ -8,7 +8,6 @@ class Node
 protected:
 	T item;			//data item
 	Node<T> *next;	//pointer to next node (headNnode if used as headnode object)
-
 
 public:
 	//Constructors
@@ -47,8 +46,19 @@ public:
 
 	Node<T> *getNext() const
 	{
+
 		return next;
 	}
+
+};
+
+template <class T>
+class BSTNode : public Node<T> {
+
+public:
+	Node<T>* right;
+	Node<T>* left;
+
 };
 
 #endif
