@@ -2,12 +2,12 @@
 #include <iostream>
 #include <fstream>
 #include <cstring> 
+#include "Stack.h"
 #include "BST.h"
 using std::cout;
 using std::cin;
 using std::string;
 using std::ofstream; 
-using std::wofstream;
 using std::endl;
 using std::getline;
 
@@ -15,6 +15,7 @@ using std::getline;
 // Driver Program to test above functions 
 int main()
 {
+	Stack <int*> stackptr;
 	int i;
 	BST<string> name;
 	BST<string> birthday;
@@ -27,6 +28,7 @@ int main()
 	infile.open("InputData.txt");
 	string bdaya[99], namea[99];
 	string str = "";
+
 
 	if (infile.is_open()) {
 		for (i = 0; !infile.eof(); i++) {
@@ -47,13 +49,18 @@ int main()
 	cout << "Post-Order for Names: " << endl;
 	noufile << "Post-Order Names: " << endl;
 
-	noufile << name.printPostorder() << endl;
+	name.printPostorder();
+	noufile << name.ouPostorder();
+
+	name.ouEmpty(); //empty string
 
 	cout << "Pre-Order for names: " << endl;
-	noufile << "Pre-Order Names: " << endl;
+	noufile << "\nPre-Order Names: " << endl;
 
-	noufile << name.printPreorder() << endl;
+	name.printPreorder();
+	noufile << name.ouPreorder();
 
+	name.ouEmpty();
 	//Bday Part
 	boufile << "Birthday File:" << endl;
 	cout << endl<<"Birthday File:" << endl;
@@ -67,12 +74,16 @@ int main()
 	cout << "In-Order for Birthdays: " << endl;
 	boufile << "In-Order Birthdays: " << endl;
 
-	boufile << birthday.printInorder() << endl;
+	birthday.printInorder();
+	boufile << birthday.ouInorder();
+
+	birthday.ouEmpty(); 
 
 	cout << "Breadth-First for Birthdays: " << endl;
-	boufile << "Breadth-First Birthdays: " << endl;
+	boufile << "\nBreadth-First Birthdays: " << endl;
 
-	
+	birthday.printBFirst();
+	boufile << birthday.ouBFirst();
 
 	// Close the file 
 	infile.close();
