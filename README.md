@@ -1,5 +1,2 @@
-# Lab5
-Defensive coding:
-1. cn.clear
-2. check cn.fail
-3. implement teestream
+Sorts Birthday by year->month->day
+Sorts name by the sum of the value of characters of name
